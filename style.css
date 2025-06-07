@@ -1,0 +1,514 @@
+:root {
+  --primary-color: rgb(255, 0, 0); 
+  --secondary-color: #0c0b0b;
+  --accent-color: #56667b;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* HEADER & HERO SECTION */
+
+.hero {
+  padding: 0rem 3rem 3rem 3rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: whitesmoke;
+  height: auto;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+}
+
+.header_logo {
+  display: flex;
+  align-items: center;
+}
+
+.header_logo img {
+  width: 5rem;
+  height: auto;
+  margin: 0.6rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 1.5rem;
+  margin: 1rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: black;
+}
+
+.sidebar_button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 500px;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  transition: right 0.5s ease-in-out;
+  overflow-y: auto;
+  z-index: 2000;
+  display: none;
+}
+
+.show {
+  right: 0;
+  display: block;
+}
+
+.blur_content.blur-effect {
+  filter: blur(1px);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.5s ease-in-out;
+}
+
+.blur_content.blur-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(171, 168, 168, 0.5);
+  z-index: 1;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 4rem;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.sidebar a:hover {
+  color: white;
+  background-color: rgba(155, 152, 152, 0.1);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 10px;
+}
+
+.dropdown-content a {
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.dropdown-content a:hover {
+  color: var(--secondary-color);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* SHIPPING FORMS & IMAGES */
+
+.shipping_forms {
+  padding-top: 4rem;
+}
+
+.shipping_forms img {
+  max-width: 100%;
+}
+
+.seafreight_image {
+  background-image: url(/asset/swiftwl_m.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  padding-top: 5rem;
+  text-align: center;
+} 
+
+.freight_txt {
+  color: white;
+  font-size: 2.1rem;
+  padding: 2rem;
+}
+
+.seafreight_image p {
+  color: white;
+}
+
+/* WHAT WE OFFER */
+
+.offers {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.offers span {
+  color: var(--primary-color);
+}
+
+.Offer_section {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+  padding: 1rem;
+}
+
+.cards {
+  box-shadow: 0px 0px 10px rgba(38, 37, 37, 0.2);
+  padding: 0.7rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transition: 0.5s ease-in-out;
+}
+
+.cards:hover {
+  background-color: whitesmoke;
+}
+
+.movement_by_road {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.movement_by_road img {
+  width: 100%;
+}
+
+.for_all_shippers {
+  max-width: 1200px;
+  margin: 5rem auto 0 auto;
+  background-color: whitesmoke;
+  padding: 2rem;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.for_all_shippers img {
+  width: 300px;
+  margin-top: 2rem;
+}
+
+.for_all_shippers button {
+  margin-top: 2rem;
+  border: none;
+  padding: 1rem 3rem;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+
+.for_all_shippers button:active {
+  background-color: rgb(31, 15, 15);
+}
+
+.business {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.business img {
+  margin-top: 3rem;
+}
+
+.business_shipping img {
+  width: 100%;
+}
+
+.business_shipping {
+  padding: 1rem;
+  margin-top: 8rem;
+}
+
+.logistics_shipping {
+  background-image: url(asset/enterprice-bg.jpg);
+  max-width: 1200px;
+  margin: 7rem auto 0 auto;
+  border-radius: 1rem;
+  background-position: center;
+  background-size: cover;
+}
+
+.logistics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.image {
+  padding-top: 3rem;
+}
+
+.logistics img {
+  width: 100%;
+}
+
+.containers h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.about_us {
+  max-width: 1000px;
+  margin: 0 auto ;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1em;
+  padding: 1rem;
+}
+
+.about_us p {
+  font-size: 0.9rem;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: whitesmoke;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.about img {
+  height: 70px;
+}
+
+.about_the_company {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.about_the_company span {
+  color: var(--primary-color);
+}
+
+.industrial_solutions {
+  max-width: 1050px;
+  margin: 5rem auto 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.solutions {
+  padding: 1rem;
+}
+
+.solutions img {
+  width: 100%;
+  transition: 0.5s ease-in;
+}
+
+.solutions img:hover {
+  transform: scale(1.1);
+}
+
+.down {
+  margin-top: 3rem;
+}
+
+.breif_intro {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.breif_intro h1 {
+  color: #0c0b0b;
+}
+
+.partners {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 0.3rem;
+}
+
+.Affilations {
+  text-align: center;
+}
+
+.Affilations h2 {
+  font-size: 1rem;
+}
+
+.Stractegic {
+  text-align: center;
+  color: black;
+  margin-bottom: 3rem;
+}
+
+.Stractegic span {
+  color: var(--primary-color);
+}
+
+.affiltions_container {
+  margin-bottom: 5rem;
+}
+
+.affiltions_container h1 {
+  color: #0c0b0b;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.logo img {
+  margin: 1rem;
+  width: 50px;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: var(--secondary-color);
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 4rem 1rem;
+  gap: 2rem;
+}
+
+.services a {
+  text-decoration: none;
+  color: white;
+  gap: 2rem;
+}
+
+.adress, .whatsapp, .mail {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.whatsapp, .mail, a {
+  text-decoration: none;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.copywright {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  .navigation ul {
+    display: none;
+  }
+
+  .header_logo img {
+    width: 2.5rem;
+    height: auto;
+    margin: 0.5rem;
+  }
+
+  .sidebar_button {
+    display: flex;
+  }
+
+  .sidebar {
+    width: 100%;
+    right: 0;
+    text-align: center;
+  }
+  .freight_txt {
+    font-size: 1rem;
+  }
+
+}
+
+
+
